@@ -48,3 +48,12 @@ Row(modifier = Modifier.fillMaxWidth()) {
     Text("R$ 42,90", Modifier.weight(1f))
 }
 ```
+
+**O problema:** `weight(1f)` faz o segundo `Text` ocupar todo o espaço restante da `Row`, mas o texto continua alinhado à esquerda dentro dessa área — por isso "R$ 42,90" aparece logo depois de "Total", em vez de colado na borda direita.
+
+Duas correções implementadas:
+1. `LinhaTotalCorrecao1` — usa `Spacer(Modifier.weight(1f))` entre os dois textos.
+2. `LinhaTotalCorrecao2` — usa `Arrangement.SpaceBetween` na `Row`.
+
+## Como testar
+Abra o projeto no Android Studio e rode o `@Preview` de cada arquivo individualmente (clique no ícone de preview ao lado da função anotada com `@Preview`).
